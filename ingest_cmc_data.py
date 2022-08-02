@@ -6,14 +6,16 @@ import os
 from datetime import datetime
 import shutil
 
-os.chdir('..')
+#os.chdir('..')
 
-with open('config.json') as config_file:
-    config = json.load(config_file)
+#with open('config.json') as config_file:
+#    config = json.load(config_file)
 
-cmc_key = config["CMC_KEY"]
+#cmc_key = config["CMC_KEY"]
 
-os.chdir('./stepn-tracker')
+cmc_key = "5457be86-7865-4f86-8608-b6998d8b34aa"
+
+#os.chdir('./stepn-tracker')
 
 crypto_symbols = {'Solana': 'sol', 'GMT': 'gmt', 'GST': 'gst'}
 
