@@ -6,7 +6,9 @@ import os
 import json
 import shutil
 
-with open('/etc/config.json') as config_file:
+os.chdir('..')
+
+with open('config.json') as config_file:
     config = json.load(config_file)
 
 user_name = config.get("admin_user")
@@ -14,6 +16,8 @@ password = config.get("admin_password")
 host = config.get("host")
 database_name = config.get("database_name")
 port_number = config.get("port_number")
+
+os.chdir('./stepn-tracker')
 
 #setup_engine = f"postgresql://{user_name}:{password}@{host}:{port_number}/{database_name}"
 setup_engine = f"postgresql://felix_frohboese:Nordseekrabbe2107,@127.0.0.1:5432/stepn-tracker-db"

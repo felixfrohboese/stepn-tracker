@@ -9,7 +9,7 @@ import shutil
 with open('/etc/config.json') as config_file:
     config = json.load(config_file)
 
-cmc_key = config.get("CMC_KEY")
+cmc_key = config["CMC_KEY"]
 
 crypto_symbols = {'Solana': 'sol', 'GMT': 'gmt', 'GST': 'gst'}
 
