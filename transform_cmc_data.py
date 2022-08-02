@@ -17,6 +17,8 @@ engine = create_engine(setup_engine)
 #inspector = inspect(engine)
 #schemas = inspector.get_schema_names()
 
+sql_statement = 'CREATE TABLE IF NOT EXISTS records (id SERIAL  PRIMARY KEY, timestamp TIMESTAMP DEFAULT now(), name VARCHAR, symbol VARCHAR, price REAL)'
+engine.execute(sql_statement)
 
 fileList = []
 for filenames in os.walk('./JSON_files'):
@@ -46,8 +48,8 @@ for no, i in enumerate(pure_list):
     name = api_data['data'][f'{symbol_upper}']['name']
     symbol = api_data['data'][f'{symbol_upper}']['symbol']
 
-    sql_statement = f"INSERT INTO records (name, symbol, price) VALUES ('{name}', '{symbol}', {price})"
-    engine.execute(sql_statement)
+    sql_statement_insert = f"INSERT INTO records (name, symbol, price) VALUES ('{name}', '{symbol}', {price})"
+    engine.execute(sql_statement_insert)
 
     done_indices.append(no)
 
