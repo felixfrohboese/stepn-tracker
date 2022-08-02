@@ -15,7 +15,10 @@ host = config.get("host")
 database_name = config.get("database_name")
 port_number = config.get("port_number")
 
-setup_engine = f"postgresql://{user_name}:{password}@{host}:{port_number}/{database_name}"
+#setup_engine = f"postgresql://{user_name}:{password}@{host}:{port_number}/{database_name}"
+setup_engine = f"postgresql://felix_frohboese:Nordseekrabbe2107,@127.0.0.1:5432/stepn-tracker-db"
+
+
 engine = create_engine(setup_engine)
 #inspector = inspect(engine)
 #schemas = inspector.get_schema_names()
