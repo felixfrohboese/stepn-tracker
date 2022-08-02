@@ -6,10 +6,14 @@ import os
 from datetime import datetime
 import shutil
 
-with open('/etc/config.json') as config_file:
+os.chdir('..')
+
+with open('config.json') as config_file:
     config = json.load(config_file)
 
 cmc_key = config["CMC_KEY"]
+
+os.chdir('./stepn-tracker')
 
 crypto_symbols = {'Solana': 'sol', 'GMT': 'gmt', 'GST': 'gst'}
 
