@@ -6,13 +6,16 @@ import os
 import json
 import shutil
 
-user_name = "postgres"
-#pw = os.environ["POSTGRES_PAT"]
-host = "127.0.0.1"
-database_name = "cmcdata2"
-port_number = "5432"
+with open('/etc/config.json') as config_file:
+    config = json.load(config_file)
 
-setup_engine = f"postgresql://{user_name}@{host}:{port_number}/{database_name}"
+user_name = config.get("admin_user")
+password = config.get("admin_password")
+host = config.get("host")
+database_name = config.get("database_name")
+port_number = config.get("port_number")
+
+setup_engine = f"postgresql://{user_name}:{password}@{host}:{port_number}/{database_name}"
 engine = create_engine(setup_engine)
 #inspector = inspect(engine)
 #schemas = inspector.get_schema_names()

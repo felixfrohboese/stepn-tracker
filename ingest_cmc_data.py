@@ -2,15 +2,14 @@ import requests
 import json
 import pandas as pd
 
-#from dotenv import load_dotenv, find_dotenv
-#load_dotenv(find_dotenv())
-
 import os
 from datetime import datetime
 import shutil
 
-cmc_key = os.environ.get("CMC_KEY")
-#cmc_key = "5457be86-7865-4f86-8608-b6998d8b34aa"
+with open('/etc/config.json') as config_file:
+    config = json.load(config_file)
+
+cmc_key = config.get("CMC_KEY")
 
 crypto_symbols = {'Solana': 'sol', 'GMT': 'gmt', 'GST': 'gst'}
 
