@@ -20,7 +20,7 @@ port_number = config.get("port_number")
 os.chdir('./stepn-tracker')
 
 #setup_engine = f"postgresql://{user_name}:{password}@{host}:{port_number}/{database_name}"
-setup_engine = f"postgresql://felix_frohboese:Nordseekrabbe2107,@127.0.0.1:5432/stepn-tracker-db"
+setup_engine = f"postgresql://postgres:xvfD4bDDxswy@127.0.0.1:5432/stepn-tracker-db"
 
 
 engine = create_engine(setup_engine)
