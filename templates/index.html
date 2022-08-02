@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>STEPN Tracker</title>
+  </head>
+  <body>
+
+    <h2>STEPN Coin Data</h2>
+    <p>Data as of: {{ data_sol.timestamp }} </p>
+    <ul>
+      <li>{{ data_sol.symbol }}: {{ data_sol.price }} EUR </li>
+      <li>{{ data_gmt.symbol }}: {{ data_gmt.price }} EUR </li>
+      <li>{{ data_gst.symbol }}: {{ data_gst.price }} EUR </li>
+    </ul>
+
+  </body>
+</html>

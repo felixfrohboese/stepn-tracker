@@ -1,0 +1,17 @@
+
+#go to home directory (alternatively use tilde option+n: ~/)
+cd
+
+#open bash profile in nano
+nano .bash_profile
+
+#include variable in file without space after equal sign
+
+#activate
+source .bash_profile
+
+#use os in file to access environment variable
+import os
+
+#access environment variable
+os.environ.get("CMC_KEY")

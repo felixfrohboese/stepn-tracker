@@ -1,0 +1,23 @@
+Setup a virtual environment:
+
+
+#setup venv
+python3 -m venv stepn-tracker/venv
+
+#activate venv
+source stepn-tracker/venv/bin/activate
+
+#install requirement
+pip3 install -r requirements.txt
+
+#check if venv active
+which python
+
+#deactivate venv
+deactivate
+
+#delete venv
+rm -rf stepn-tracker/venv
+
+#never put files in the environment
+#add the environment to git ignore
