@@ -29,4 +29,4 @@ def index():
     data_gst = Record.query.filter_by(symbol='GST').order_by(db.desc(Record.id)).first())
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=80)
+  app.run(host='0.0.0.0', port=5000)
