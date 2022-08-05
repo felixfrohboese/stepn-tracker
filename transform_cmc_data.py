@@ -28,7 +28,7 @@ engine = create_engine(setup_engine)
 #inspector = inspect(engine)
 #schemas = inspector.get_schema_names()
 
-sql_statement = 'CREATE TABLE IF NOT EXISTS records (id SERIAL  PRIMARY KEY, timestamp TIMESTAMP DEFAULT now(), name VARCHAR, symbol VARCHAR, price REAL)'
+sql_statement = 'CREATE TABLE IF NOT EXISTS records (id SERIAL  PRIMARY KEY, timestamp TIMESTAMP DEFAULT now()::timestamp(0), name VARCHAR, symbol VARCHAR, price REAL)'
 engine.execute(sql_statement)
 
 fileList = []
